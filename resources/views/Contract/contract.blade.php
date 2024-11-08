@@ -36,6 +36,7 @@
                             <li><a href="/">Home</a></li>
                             <li><a href="/about">About</a></li>
                             <li><a href="/contract">Contract</a></li>
+                            <li><a href="/users">Users</a></li>
                         </ul>
                     </div>
                     <a class="btn btn-ghost text-xl">Simple Blog</a>
@@ -45,6 +46,7 @@
                         <li><a href="/">Home</a></li>
                         <li><a href="/about">About</a></li>
                         <li><a href="/contract">Contract</a></li>
+                        <li><a href="/users">Users</a></li>
                     </ul>
                 </div>
                 <div class="navbar-end">
