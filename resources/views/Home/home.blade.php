@@ -14,7 +14,7 @@
     <div class="container mx-auto bg-gray-400">
 
         <header>
-            <div class="navbar bg-blue-950 text-white">
+            <div class="navbar bg-cyan-900 text-white">
                 <div class="navbar-start">
                     <div class="dropdown">
                         <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -49,7 +49,7 @@
                     </ul>
                 </div>
                 <div class="navbar-end">
-                    <a class="btn">Button</a>
+                    <a class="bg-fuchsia-950 text-white px-4 py-2 rounded-md">Login</a>
                 </div>
             </div>
         </header>

@@ -34,7 +34,7 @@
             </ul>
         </div>
         <div class="navbar-end">
-            <a class="btn">Button</a>
+            <a class="bg-green-950 text-white px-2 py-1 rounded-md">Login</a>
         </div>
     </div>
 </header>
