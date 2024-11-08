@@ -12,7 +12,7 @@
 </head>
 
 <body class="font-sans antialiased dark:bg-black dark:text-white/50">
-    <h1 class="text-center text-3xl font-bold">Hello! I am Simple Blog About!</h1>
+    <h1 class="text-center text-3xl font-bold">Hello! I am Simple Blog About Page!</h1>
 </body>
 
 </html>
