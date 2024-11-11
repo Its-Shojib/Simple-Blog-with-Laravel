@@ -15,15 +15,32 @@ class UserController extends Controller
 
     function addUser(Request $request)
     {
-        
+        // Validate the input data
+        $request->validate([
+            'name' => 'required|max:50|min:3',
+            'email' => 'required|email|unique:users',
+            'age' => 'required|integer',
+            'phone' => 'required|digits:11'
+        ],[
+            'name.required' => 'Name is required.',
+            'name.max' => 'Name should not exceed 50 characters.',
+            'name.min' => 'Name should be at least 3 characters long.',
+            'email.required' => 'Email is required.',
+            'email.email' => 'Invalid email format.',
+            'email.unique' => 'Email already exists.',
+            'age.required' => 'Age is required.',
+            'age.integer' => 'Age must be an integer.',
+            'phone.required' => 'Phone number is required.',
+            'phone.digits' => 'Phone number should be 11 digits long.'
+        ]);
+
         // Store the user data in the database
         $name = $request->input('name');
         $email = $request->input('email');
         $age = $request->input('age');
         $phone = $request->input('phone');
         echo " $name, $email, $age, $phone";
-        // Validate the input data
-        // Store the user data in the database
+
         // Example:
         // User::create(["name"=>$name, "email"=>$email]);
         // return redirect('/users')->with('success', 'User added successfully');
