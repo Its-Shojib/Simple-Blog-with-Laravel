@@ -1,4 +1,4 @@
-<header>
+<header class="mb-10">
     <div class="navbar bg-cyan-900 text-white">
         <div class="navbar-start">
             <div class="dropdown">
@@ -45,7 +45,3 @@
         </div>
     </div>
 </header>
-<main class="flex justify-center items-center py-10">
-    <h1 class="text-center text-3xl font-bold">Hello! I am {{$page}} Page</h1>
-
-</main>
