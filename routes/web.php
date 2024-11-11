@@ -14,3 +14,4 @@ Route::get('/contract', function () {
 });
 
 Route::get('/users', [UserController::class, 'getUser']);
+Route::post('adduser',[UserController::class, 'addUser'] );
