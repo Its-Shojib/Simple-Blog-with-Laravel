@@ -13,7 +13,8 @@
 <body>
     <div class="container mx-auto bg-gray-400 min-h-screen">
 
-        @include('components.navbar', ['page'=> 'Users'])
+        <!-- @include('components.navbar', ['page'=> 'Users']) -->
+        <x-navbar :page="'Users'" />
 
         <div class="max-w-md mt-8">
 
