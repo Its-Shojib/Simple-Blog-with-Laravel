@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -10,6 +9,6 @@ class UserController extends Controller
         // Fetch data from the database
         // Return the data as JSON
         // Example:
-        return view('users');
+        return view('Users.users');
     }
 }
