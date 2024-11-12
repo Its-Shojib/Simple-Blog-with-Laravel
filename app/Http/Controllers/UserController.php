@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http;
 
 class UserController extends Controller
 {
@@ -44,5 +45,15 @@ class UserController extends Controller
 
         // return redirect()->back()->with('success', 'User added successfully');
 
+    }
+
+    function fetchUser(){
+        // Fetch all users from the http
+        // and return them as a JSON response
+        $res = Http::get('https://jsonplaceholder.typicode.com/users');
+        $users = $res->body();
+        return view('/hello',['users'=> json_decode($users)]);
+
+        
     }
 }

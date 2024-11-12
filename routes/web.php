@@ -53,4 +53,5 @@ Route::post('adduser', [UserController::class, 'addUser']);
 // });
 
 //Route single Middleware
-Route::view('hello', 'hello')->middleware([AgeCheck::class, userCheck::class]);
+// Route::view('hello', 'hello')->middleware([AgeCheck::class, userCheck::class]);
+Route::get('hello',[UserController::class, 'fetchUser']);
