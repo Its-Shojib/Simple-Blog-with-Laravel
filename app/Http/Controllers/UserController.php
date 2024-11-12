@@ -9,7 +9,9 @@ class UserController extends Controller
 {
     function getUser()
     {
-        $users = DB::select('select * from users');
+        // $users = DB::select('select * from users');
+        // $users = DB::table("users");
+        $users = \App\Models\User::all();
         return view('Users.users', ['users' => $users]);
     }
  
@@ -30,7 +32,7 @@ class UserController extends Controller
         $phone = $request->input('phone');
         echo " $name, $email, $age, $phone";
 
-        
+
         DB::table('users')->insert([
             'name' => $name,
             'email' => $email,
