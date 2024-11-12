@@ -21,7 +21,7 @@ class UserController extends Controller
             'email' => 'required|email|unique:users',
             'age' => 'required|integer',
             'phone' => 'required|digits:11'
-        ],[
+        ], [
             'name.required' => 'Name is required.',
             'name.max' => 'Name should not exceed 50 characters.',
             'name.min' => 'Name should be at least 3 characters long.',

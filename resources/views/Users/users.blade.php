@@ -12,7 +12,12 @@
 
 <body>
     <div class="container mx-auto bg-gray-400 min-h-screen">
-
+            <!-- <h1>{{URL::current()}}
+                {{URL::full()}}
+                {{URL::previous()}}
+                {{url()->current()}}
+                {{url()->full()}}
+            </h1> -->
         <!-- @include('components.navbar', ['page'=> 'Users']) -->
         <x-navbar :page="'Users'" />
 

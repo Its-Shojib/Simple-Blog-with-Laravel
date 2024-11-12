@@ -22,7 +22,7 @@
 
                     <li><a href="/about" class="{{ $page == 'About' ? 'bg-gray-900 rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white' : 'rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white' }}">About</a></li>
 
-                    <li><a href="/contract" class="{{ $page == 'Contract' ? 'bg-gray-900 rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white' : 'rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white' }}">Contract</a></li>
+                    <li><a href="{{route('ct')}}" class="{{ $page == 'Contract' ? 'bg-gray-900 rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white' : 'rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white' }}">Contract</a></li>
 
                     <li><a href="/users" class="{{ $page == 'Users' ? 'bg-gray-900 rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white' : 'rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white' }}">Users</a></li>
                 </ul>
@@ -42,6 +42,7 @@
         </div>
         <div class="navbar-end">
             <a class="bg-fuchsia-950 text-white px-4 py-2 rounded-md">Login</a>
+
         </div>
     </div>
 </header>
