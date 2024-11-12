@@ -12,7 +12,7 @@
 
 <body>
     <div class="container mx-auto bg-gray-400 min-h-screen">
-            <!-- <h1>{{URL::current()}}
+        <!-- <h1>{{URL::current()}}
                 {{URL::full()}}
                 {{URL::previous()}}
                 {{url()->current()}}
@@ -23,12 +23,11 @@
 
         <div class="max-w-md mt-8">
 
-            <!-- @for($i=0; $i < count($users); $i++)
-                <p>Hello I am {{$users[$i]}} <br></p>
-            @endfor -->
-            @foreach($users as $user)
-            <p>Hello I am {{ $user }} <br></p>
-            @endforeach
+            @for($i = 0; $i < count($users); $i++)
+                <p>Hello I am {{ $users[$i]->name }} <br></p> 
+                <p>My email is:  {{ $users[$i]->email }} <br></p> 
+                <!-- Replace 'name' with the actual column you want to display -->
+                @endfor
         </div>
     </div>
 </body>

@@ -3,14 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
     function getUser()
     {
-        // Fetch data from the database
-        $users = ["Masum Billah", "Joydip Das", "Md Shojib Hossain"];
-        return view('Users.users', ["users" => $users]);
+        $users = DB::select('select * from users');
+        
+        
+        return view('Users.users', ['users' => $users]);
     }
 
     function addUser(Request $request)
