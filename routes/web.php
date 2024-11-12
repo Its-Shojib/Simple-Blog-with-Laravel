@@ -18,7 +18,7 @@ Route::get('/about', function () {
 Route::view('/contract', 'Contract/contract')->name('ct');
 
 Route::get('/users', [UserController::class, 'getUser']);
-Route::post('adduser',[UserController::class, 'addUser'] );
+Route::post('adduser', [UserController::class, 'addUser']);
 
 //Routing group in prefix
 Route::group(['prefix' => 'admin'], function () {
@@ -31,7 +31,14 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 //This will also work as a prefix
-Route::prefix('admin')->group(function(){
+Route::prefix('admin')->group(function () {
     Route::get('/users', [UserController::class, 'getUsers']);
     Route::post('/adduser', [UserController::class, 'addUser']);
+});
+
+//Route group with controller
+Route::controller(UserController::class)->group(function () {
+    Route::get('/edituser/{id}', 'editUser')->name('edit');
+    Route::post('/updateuser/{id}', 'updateUser');
+    Route::delete('/deleteuser/{id}', 'deleteUser');
 });
