@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+//import Middleware
+use App\Http\Middleware\AgeCheck;
+use App\Http\Middleware\userCheck;
+
 
 Route::get('/', function () {
     return view('Home/home');
@@ -37,8 +41,16 @@ Route::prefix('admin')->group(function () {
 });
 
 //Route group with controller
-Route::controller(UserController::class)->group(function () {
-    Route::get('/edituser/{id}', 'editUser')->name('edit');
-    Route::post('/updateuser/{id}', 'updateUser');
-    Route::delete('/deleteuser/{id}', 'deleteUser');
-});
+// Route::controller(UserController::class)->group(function () {
+//     Route::get('/edituser/{id}', 'editUser')->name('edit');
+//     Route::post('/updateuser/{id}', 'updateUser');
+//     Route::delete('/deleteuser/{id}', 'deleteUser');
+// });
+
+//group middleware
+// Route::middleware(['check-1'])->group(function () {
+//     Route::get('/users', [UserController::class, 'getUser']);
+// });
+
+//Route single Middleware
+Route::view('hello', 'hello')->middleware([AgeCheck::class, userCheck::class]);
