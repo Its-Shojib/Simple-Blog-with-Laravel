@@ -14,6 +14,11 @@
     <div class="container mx-auto bg-gray-400 min-h-screen">
         <!-- @include('components.navbar', ['page'=> 'Home']) -->
         <x-navbar :page="'Home'" />
+        @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+        @endif
         <main class="flex justify-center items-center">
             <div class="hero">
                 <div class="hero-content flex-col lg:flex-row-reverse">

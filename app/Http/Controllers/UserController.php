@@ -23,17 +23,6 @@ class UserController extends Controller
             'email' => 'required|email|unique:users',
             'age' => 'required|integer',
             'phone' => 'required|digits:11'
-        ], [
-            'name.required' => 'Name is required.',
-            'name.max' => 'Name should not exceed 50 characters.',
-            'name.min' => 'Name should be at least 3 characters long.',
-            'email.required' => 'Email is required.',
-            'email.email' => 'Invalid email format.',
-            'email.unique' => 'Email already exists.',
-            'age.required' => 'Age is required.',
-            'age.integer' => 'Age must be an integer.',
-            'phone.required' => 'Phone number is required.',
-            'phone.digits' => 'Phone number should be 11 digits long.'
         ]);
 
         // Store the user data in the database
@@ -42,10 +31,16 @@ class UserController extends Controller
         $age = $request->input('age');
         $phone = $request->input('phone');
         echo " $name, $email, $age, $phone";
+        DB::table('users')->insert([
+            'name' => $name,
+            'email' => $email,
+            'age' => $age,
+            'phone' => $phone
+        ]);
 
-        // Example:
-        // User::create(["name"=>$name, "email"=>$email]);
-        // return redirect('/users')->with('success', 'User added successfully');
-        return "Form Submitted";
+        return redirect('/users')->with('success', 'User added successfully!');
+
+        // return redirect()->back()->with('success', 'User added successfully');
+
     }
 }
