@@ -44,11 +44,11 @@
                             <td>{{$user->age}}</td>
                             <td>{{$user->phone}}</td>
                             <td class="flex gap-3 text-center">
-                                <a href="/" class="bg-blue-800 text-white rounded-md px-3 py-1">Edit</a>
-                                <form action="/" method="POST">
+                                <a href="{{ url('/user/' . $user->id . '/edit') }}" class="bg-blue-800 text-white rounded-md px-3 py-1">Edit</a>
+                                <form action="{{ url('/user/' . $user->id. '/delete') }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="bg-red-800 text-white rounded-md px-3 py-1">Delete</button>
+                                    <button type="submit" class="bg-red-800 text-white rounded-md px-3 py-1">Delete</button>
                                 </form>
 
                             </td>

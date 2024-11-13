@@ -67,4 +67,11 @@ Route::middleware(['Auth'])->group(function () {
     Route::post('/adduser', [UserController::class, 'addUser']);
     //Logout
     Route::get('/logout', [UserController::class, 'logout']);
+
+    //Edit route
+    Route::get('/user/{id}/edit', [UserController::class, 'editUser']);
+    Route::post('/updateuser/{id}', [UserController::class, 'updateUser']);
+
+    //Delete route
+    Route::delete('/deleteuser/{id}', [UserController::class, 'deleteUser']);
 });

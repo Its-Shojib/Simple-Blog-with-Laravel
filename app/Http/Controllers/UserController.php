@@ -107,4 +107,28 @@ class UserController extends Controller
         session()->forget('user_id');
         return redirect('/users')->with('success', 'Logged out successfully!');
     }
+
+    function editUser($id){
+        $user = \App\Models\User::find($id);
+        return view('EditUser.edituser', ['user' => $user]);
+    }
+    function updateUser(Request $request, $id){
+        // Validate the input data
+        $request->validate([
+            'name' =>'required|max:50|min:3',
+            'email' =>'required|email',
+            'age' =>'required|integer',
+            'phone' =>'required|digits:11'
+        ]);
+
+        // Update the user data in the database
+        $user = \App\Models\User::find($id);
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->age = $request->input('age');
+        $user->phone = $request->input('phone');
+        $user->save();
+
+        return redirect('/users')->with('success', 'User updated successfully!');
+    }
 }
