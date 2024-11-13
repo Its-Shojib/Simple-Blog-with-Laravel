@@ -37,7 +37,7 @@ class UserController extends Controller
 
         //Model Queries
         // $users = \App\Models\User::where('name', 'LIKE', '%John%')->get();
-        $users = \App\Models\User::where('name', 'LIKE', '%shojib%')->orWhere('age', '>', 26)->get();
+        // $users = \App\Models\User::where('name', 'LIKE', '%shojib%')->orWhere('age', '>', 26)->get();
         // $users = \App\Models\User::all();
 
         // $users = \App\Models\User::where('name', 'LIKE', '%John%')->orWhere('age', '>', 25)->get();
