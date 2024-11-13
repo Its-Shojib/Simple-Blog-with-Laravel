@@ -130,5 +130,12 @@ class UserController extends Controller
         $user->save();
 
         return redirect('/users')->with('success', 'User updated successfully!');
+
+
+    }
+    function deleteUser($id){
+        // Delete the user from the database
+        \App\Models\User::destroy($id);
+        return redirect('/users')->with('success', 'User deleted successfully!');
     }
 }

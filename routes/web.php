@@ -70,8 +70,8 @@ Route::middleware(['Auth'])->group(function () {
 
     //Edit route
     Route::get('/user/{id}/edit', [UserController::class, 'editUser']);
-    Route::post('/updateuser/{id}', [UserController::class, 'updateUser']);
+    Route::post('/user/{id}/update', [UserController::class, 'updateUser']);
 
     //Delete route
-    Route::delete('/deleteuser/{id}', [UserController::class, 'deleteUser']);
+    Route::delete('/user/{id}/delete', [UserController::class, 'deleteUser']);
 });
