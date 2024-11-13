@@ -55,15 +55,16 @@ Route::get('hello', [UserController::class, 'fetchUser']);
 //Login Route
 Route::view('/login', 'Login/login');
 Route::post('/login', [UserController::class, 'login']);
-Route::get('/logout', [UserController::class, 'logout']);
-
 
 //Private Route
 Route::middleware(['Auth'])->group(function () {
+    Route::view('/', 'Home/home');
+    Route::view('/addnewuser', 'AddNewUser/addnewuser');
     Route::get('/users', [UserController::class, 'getUser']);
     Route::view('/about',  'About/about');
     Route::view('/contract', 'Contract/contract')->name('ct');
-    Route::view('/', 'Home/home');
     Route::get('/users', [UserController::class, 'getUser']);
-    Route::post('adduser', [UserController::class, 'addUser']);
+    Route::post('/adduser', [UserController::class, 'addUser']);
+    //Logout
+    Route::get('/logout', [UserController::class, 'logout']);
 });

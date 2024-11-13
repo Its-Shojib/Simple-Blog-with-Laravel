@@ -13,10 +13,13 @@
 
 <body>
     <div class="container mx-auto bg-gray-400 min-h-screen">
-    <!-- @include('components.navbar', ['page'=> 'About']) -->
-    <x-navbar :page="'About'" />
-
+        <!-- @include('components.navbar', ['page'=> 'About']) -->
+        <x-navbar :page="'About'" />
+        <main class="flex justify-center items-center">
+            <h1 class="text-center font-bold text-2xl">Hello! I am About.</h1>
+        </main>
     </div>
+
 </body>
 
 </html>

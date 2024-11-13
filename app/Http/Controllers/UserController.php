@@ -47,8 +47,7 @@ class UserController extends Controller
         return view('Users.users', ['users' => $users]);
     }
  
-    function addUser(Request $request)
-    {
+    function addUser(Request $request){
         // Validate the input data
         $request->validate([
             'name' => 'required|max:50|min:3',
@@ -100,7 +99,7 @@ class UserController extends Controller
         if($user && $request->password === $user->phone){
             // Login successful
             $request->session()->put('user_id', $user->id);
-            return redirect('/users')->with('success', 'Login successful!');
+            return redirect('/')->with('success', 'Login successful!');
         }
     }
     function logout(){
