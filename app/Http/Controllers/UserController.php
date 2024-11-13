@@ -10,9 +10,38 @@ class UserController extends Controller
 {
     function getUser()
     {
-        // $users = DB::select('select * from users');
-        // $users = DB::table("users");
-        $users = \App\Models\User::all();
+        $users = DB::select('select * from users');
+        // $users = DB::table("users")->get();
+        // $users = DB::table("users")->where('name','Md Shojib Hossain')->get();
+
+        //first item
+        // $firstUser = DB::table("users")->first();
+
+        //count
+        // $countUsers = DB::table("users")->count();
+
+        //delete
+        // DB::table('users')->where('id', 1)->delete();
+
+        //update
+        // DB::table('users')->where('id', 1)->update(['name' => 'John Doe']);
+
+        // $users = DB::table("users")
+        //     ->where('name', 'LIKE', '%John%')
+        //     ->orWhere('age', '>', 25)
+        //     ->get();
+        // dd($users);
+
+
+        //Model Queries
+        // $users = \App\Models\User::where('name', 'LIKE', '%John%')->get();
+        $users = \App\Models\User::where('name', 'LIKE', '%shojib%')->orWhere('age', '>', 26)->get();
+        // $users = \App\Models\User::all();
+
+        // $users = \App\Models\User::where('name', 'LIKE', '%John%')->orWhere('age', '>', 25)->get();
+        // $users = \App\Models\User::where('name', 'LIKE', '%John%')->orWhere('age', '>', 25)->get();
+        // $users = \App\Models\User::all();
+
         return view('Users.users', ['users' => $users]);
     }
  
