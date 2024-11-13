@@ -41,8 +41,11 @@
             </ul>
         </div>
         <div class="navbar-end">
-            <a class="bg-fuchsia-950 text-white px-4 py-2 rounded-md">Login</a>
-
+            @if(session('user_id'))
+            <a href="/logout" class="bg-fuchsia-950 text-white px-4 py-2 rounded-md">Logout</a>
+            @else
+            <a href="/login" class="bg-fuchsia-950 text-white px-4 py-2 rounded-md">Login</a>
+            @endif
         </div>
     </div>
 </header>

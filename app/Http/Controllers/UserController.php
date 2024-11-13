@@ -34,7 +34,7 @@ class UserController extends Controller
         // dd($users);
 
 
-        
+
         //Model Queries
         // $users = \App\Models\User::where('name', 'LIKE', '%John%')->get();
         $users = \App\Models\User::where('name', 'LIKE', '%shojib%')->orWhere('age', '>', 26)->get();
@@ -86,5 +86,26 @@ class UserController extends Controller
         return view('/hello',['users'=> json_decode($users)]);
 
         
+    }
+
+    function login(Request $request){
+        // Validate the input data
+        $request->validate([
+            'email' =>'required|email',
+            'password' => 'required|min:8'
+        ]);
+
+        // Check if user exists
+        $user = \App\Models\User::where('email', $request->email)->first();
+        if($user && $request->password === $user->phone){
+            // Login successful
+            $request->session()->put('user_id', $user->id);
+            return redirect('/users')->with('success', 'Login successful!');
+        }
+    }
+    function logout(){
+        // Remove the user's ID from the session
+        session()->forget('user_id');
+        return redirect('/users')->with('success', 'Logged out successfully!');
     }
 }

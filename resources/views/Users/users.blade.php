@@ -50,7 +50,7 @@
                                     @method('DELETE')
                                     <button class="bg-red-800 text-white rounded-md px-3 py-1">Delete</button>
                                 </form>
-                                
+
                             </td>
                         </tr>
                         @endforeach
