@@ -26,6 +26,7 @@ class UserController extends Controller
         //update
         // DB::table('users')->where('id', 1)->update(['name' => 'John Doe']);
 
+        //Get user by condition
         // $users = DB::table("users")
         //     ->where('name', 'LIKE', '%John%')
         //     ->orWhere('age', '>', 25)
@@ -33,6 +34,7 @@ class UserController extends Controller
         // dd($users);
 
 
+        
         //Model Queries
         // $users = \App\Models\User::where('name', 'LIKE', '%John%')->get();
         $users = \App\Models\User::where('name', 'LIKE', '%shojib%')->orWhere('age', '>', 26)->get();
