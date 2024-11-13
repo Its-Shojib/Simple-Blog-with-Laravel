@@ -7,9 +7,7 @@ use App\Http\Middleware\AgeCheck;
 use App\Http\Middleware\userCheck;
 
 
-Route::get('/', function () {
-    return view('Home/home');
-});
+
 Route::get('/about', function () {
     return view('About/about');
 });
@@ -19,10 +17,7 @@ Route::get('/about', function () {
 // });
 
 //This will also work
-Route::view('/contract', 'Contract/contract')->name('ct');
 
-Route::get('/users', [UserController::class, 'getUser']);
-Route::post('adduser', [UserController::class, 'addUser']);
 
 //Routing group in prefix
 // Route::group(['prefix' => 'admin'], function () {
@@ -54,10 +49,21 @@ Route::post('adduser', [UserController::class, 'addUser']);
 
 //Route single Middleware
 // Route::view('hello', 'hello')->middleware([AgeCheck::class, userCheck::class]);
-Route::get('hello',[UserController::class, 'fetchUser']);
+Route::get('hello', [UserController::class, 'fetchUser']);
 
 
 //Login Route
 Route::view('/login', 'Login/login');
-Route::post('/login', [UserController::class,'login']);
+Route::post('/login', [UserController::class, 'login']);
 Route::get('/logout', [UserController::class, 'logout']);
+
+
+//Private Route
+Route::middleware(['Auth'])->group(function () {
+    Route::get('/users', [UserController::class, 'getUser']);
+    Route::view('/about',  'About/about');
+    Route::view('/contract', 'Contract/contract')->name('ct');
+    Route::view('/', 'Home/home');
+    Route::get('/users', [UserController::class, 'getUser']);
+    Route::post('adduser', [UserController::class, 'addUser']);
+});

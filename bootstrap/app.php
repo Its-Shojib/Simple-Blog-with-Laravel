@@ -5,6 +5,7 @@ use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use App\Http\Middleware\userCheck;
 use App\Http\Middleware\AgeCheck;
+use App\Http\Middleware\Authentication;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -17,6 +18,9 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->appendToGroup('check-1', [
             userCheck::class,
             AgeCheck::class,
+        ]);
+        $middleware->appendToGroup('Auth',[
+            Authentication::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
