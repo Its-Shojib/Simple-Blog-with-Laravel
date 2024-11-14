@@ -69,7 +69,7 @@
         </div>
 
         <div class="max-w-6xl mx-auto mt-10 flex justify-center">
-            {{$users->links()}}
+            {{ $users->links() }}
         </div>
     </div>
 </body>

@@ -145,7 +145,7 @@ class UserController extends Controller
     function searchUser(Request $request)
     {
         $search = $request->input('search');
-        $users = \App\Models\User::where('name', 'LIKE', '%' . $search . '%')->get();
+        $users = \App\Models\User::where('name', 'LIKE', '%' . $search . '%')->paginate(8);
         return view('Users.users', ['users' => $users, 'search' => $search]);
     }
 }
