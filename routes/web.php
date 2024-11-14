@@ -74,4 +74,7 @@ Route::middleware(['Auth'])->group(function () {
 
     //Delete route
     Route::delete('/user/{id}/delete', [UserController::class, 'deleteUser']);
+
+    //Search Route
+    Route::get('/search', [UserController::class, 'searchUser']);
 });

@@ -10,7 +10,7 @@ class UserController extends Controller
 {
     function getUser()
     {
-        $users = DB::select('select * from users');
+        // $users = DB::select('select * from users');
         // $users = DB::table("users")->get();
         // $users = DB::table("users")->where('name','Md Shojib Hossain')->get();
 
@@ -38,7 +38,7 @@ class UserController extends Controller
         //Model Queries
         // $users = \App\Models\User::where('name', 'LIKE', '%John%')->get();
         // $users = \App\Models\User::where('name', 'LIKE', '%shojib%')->orWhere('age', '>', 26)->get();
-        // $users = \App\Models\User::all();
+        $users = \App\Models\User::paginate(8);
 
         // $users = \App\Models\User::where('name', 'LIKE', '%John%')->orWhere('age', '>', 25)->get();
         // $users = \App\Models\User::where('name', 'LIKE', '%John%')->orWhere('age', '>', 25)->get();
@@ -140,5 +140,12 @@ class UserController extends Controller
         // Delete the user from the database
         \App\Models\User::destroy($id);
         return redirect('/users')->with('success', 'User deleted successfully!');
+    }
+
+    function searchUser(Request $request)
+    {
+        $search = $request->input('search');
+        $users = \App\Models\User::where('name', 'LIKE', '%' . $search . '%')->get();
+        return view('Users.users', ['users' => $users, 'search' => $search]);
     }
 }

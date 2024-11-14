@@ -21,7 +21,16 @@
         <!-- @include('components.navbar', ['page'=> 'Users']) -->
         <x-navbar :page="'Users'" />
 
-        <div class="max-w-6xl mx-auto mt-8">
+        <!--Search function -->
+        <div class="max-w-6xl mx-auto mt-8 justify-center items-center flex gap-0">
+            <form action="search" method="get">
+                @csrf
+                <input type="text" id="searchInput" name="search" placeholder="Search by name" class="p-3 rounded-md outline-none" value="{{@$search}}">
+                <button class="bg-orange-700 text-white p-3 rounded-md" type="submit" id="searchButton">Search</button>
+            </form>
+        </div>
+
+        <div class="max-w-6xl mx-auto mt-8 h-[450px]">
             <div class="overflow-x-auto">
                 <table class="table table-zebra-zebra ">
                     <!-- head -->
@@ -57,6 +66,10 @@
                     </tbody>
                 </table>
             </div>
+        </div>
+
+        <div class="max-w-6xl mx-auto mt-10 flex justify-center">
+            {{$users->links()}}
         </div>
     </div>
 </body>
