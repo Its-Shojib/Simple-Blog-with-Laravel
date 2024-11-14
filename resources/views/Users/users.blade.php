@@ -71,6 +71,7 @@
         <div class="max-w-6xl mx-auto mt-10 flex justify-center">
             {{ $users->links() }}
         </div>
+        <x-footer />
     </div>
 </body>
 

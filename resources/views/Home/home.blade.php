@@ -26,6 +26,7 @@
             
         </main> -->
         <x-carousal />
+        <x-footer />
     </div>
 
 </body>

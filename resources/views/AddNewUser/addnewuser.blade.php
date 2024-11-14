@@ -14,7 +14,7 @@
     <div class="w-full mx-auto bg-gray-100 min-h-screen">
         <!-- @include('components.navbar', ['page'=> 'Home']) -->
         <x-navbar :page="'Add-New-User'" />
-        <main class="flex justify-center items-center mt-20">
+        <main class="flex justify-center items-center my-10">
             <div class="hero">
                 <div class="hero-content flex-col lg:flex-row-reverse">
                     <div class="card bg-gray-400 w-full max-w-lg shrink-0 shadow-2xl">
@@ -61,6 +61,7 @@
                 </div>
             </div>
         </main>
+        <x-footer />
     </div>
 
 </body>
