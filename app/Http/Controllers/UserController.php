@@ -155,4 +155,10 @@ class UserController extends Controller
         $user = \App\Models\User::find($id);
         return view('Profile.profile', ['user' => $user]);
     }
+
+    function myProfile(){
+        $user_id = session('user_id');
+        $user = \App\Models\User::find($user_id);
+        return view('My-Profile.my-profile', ['user' => $user]);
+    }
 }

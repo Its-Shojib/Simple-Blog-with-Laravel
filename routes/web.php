@@ -80,4 +80,7 @@ Route::middleware(['Auth'])->group(function () {
 
     //View a single profile
     Route::get('/user/profile/{id}', [UserController::class, 'viewUser']);
+
+    //My profile
+    Route::get('/profile', [UserController::class, 'myProfile']);
 });
