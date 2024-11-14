@@ -19,12 +19,6 @@
         <!-- Profile Section -->
         <div class="flex justify-center items-center pt-16 pb-12 px-4 sm:px-6 lg:px-8">
             <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-8">
-                <!-- <div class="flex justify-center mb-8">
-                    <div class="w-24 h-24 rounded-full overflow-hidden">
-                        <img src="https://images.app.goo.gl/j5sHNEnNNsSWmmmv8" alt="Profile Picture" class="w-full h-full object-cover">
-                    </div>
-                </div> -->
-                <!-- User Details -->
                 <div>
                     <img width="500" height="500" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" alt="User Avatar" >
                 </div>
