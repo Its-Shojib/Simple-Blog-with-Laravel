@@ -14,7 +14,7 @@
 <body>
     <div class="w-full mx-auto bg-gray-100 min-h-screen">
         <!-- Navbar -->
-        <x-navbar />
+        <x-navbar :page="'Profile'" />
 
         <!-- Profile Section -->
         <div class="flex justify-center items-center pt-16 pb-12 px-4 sm:px-6 lg:px-8">
