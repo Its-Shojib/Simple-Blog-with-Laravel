@@ -101,6 +101,8 @@ class UserController extends Controller
             // Login successful
             $request->session()->put('user_id', $user->id);
             return redirect('/')->with('success', 'Login successful!');
+        }else{
+            return redirect()->back()->with('error', 'Invalid email or password');
         }
     }
     function logout()
