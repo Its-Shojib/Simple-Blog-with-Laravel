@@ -53,6 +53,7 @@
                             <td>{{$user->age}}</td>
                             <td>{{$user->phone}}</td>
                             <td class="flex gap-3 text-center">
+                                <a href="{{ url('/user/profile/' . $user->id) }}" class="bg-emerald-900 text-white rounded-md px-3 py-1">View</a>
                                 <a href="{{ url('/user/' . $user->id . '/edit') }}" class="bg-blue-800 text-white rounded-md px-3 py-1">Edit</a>
                                 <form action="{{ url('/user/' . $user->id. '/delete') }}" method="POST">
                                     @csrf

@@ -150,4 +150,9 @@ class UserController extends Controller
         $users = \App\Models\User::where('name', 'LIKE', '%' . $search . '%')->paginate(8);
         return view('Users.users', ['users' => $users, 'search' => $search]);
     }
+
+    function viewUser($id){
+        $user = \App\Models\User::find($id);
+        return view('Profile.profile', ['user' => $user]);
+    }
 }

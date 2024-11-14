@@ -77,4 +77,7 @@ Route::middleware(['Auth'])->group(function () {
 
     //Search Route
     Route::get('/search', [UserController::class, 'searchUser']);
+
+    //View a single profile
+    Route::get('/user/profile/{id}', [UserController::class, 'viewUser']);
 });
