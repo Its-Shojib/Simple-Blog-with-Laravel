@@ -1,4 +1,4 @@
-<header class="mb-10">
+<header>
     <div class="navbar bg-cyan-900 text-white">
         <div class="navbar-start">
             <div class="dropdown">

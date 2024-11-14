@@ -19,10 +19,11 @@
             {{ session('success') }}
         </div>
         @endif
-        <main class="flex justify-center items-center">
+        <!-- <main class="flex justify-center items-center">
             <h1 class="text-center font-bold text-2xl">Hello! I am Home.</h1>
             
-        </main>
+        </main> -->
+        <x-carousal />
     </div>
 
 </body>
