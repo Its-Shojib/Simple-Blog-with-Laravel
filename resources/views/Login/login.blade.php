@@ -11,13 +11,13 @@
 </head>
 
 <body>
-    <div class="container mx-auto bg-gray-400 min-h-screen">
+    <div class="w-full mx-auto bg-gray-100 min-h-screen">
         <!-- @include('components.navbar', ['page'=> 'Home']) -->
         <x-navbar :page="'Login'" />
-        <main class="flex justify-center items-center">
+        <main class="flex justify-center items-center mt-20">
             <div class="hero">
                 <div class="hero-content flex-col lg:flex-row-reverse">
-                    <div class="card bg-base-200 w-full max-w-lg shrink-0 shadow-2xl">
+                    <div class="card bg-gray-400 w-full max-w-lg shrink-0 shadow-2xl">
                         <h1 class="text-3xl text-center font-bold pt-5">Login</h1>
                         <form class="card-body" action="login" method="post">
                             @csrf

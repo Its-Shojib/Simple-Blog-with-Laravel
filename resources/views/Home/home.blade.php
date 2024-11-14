@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <div class="container mx-auto bg-gray-400 min-h-screen">
+    <div class="w-full mx-auto bg-gray-100 min-h-screen">
         <!-- @include('components.navbar', ['page'=> 'Home']) -->
         <x-navbar :page="'Home'" />
         @if(session('success'))
