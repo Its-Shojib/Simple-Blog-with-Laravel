@@ -58,7 +58,7 @@ Route::post('/login', [UserController::class, 'login']);
 
 //Private Route
 Route::middleware(['Auth'])->group(function () {
-    Route::view('/', 'Home/home');
+    Route::get('/', [UserController::class, 'home']);
     Route::view('/addnewuser', 'AddNewUser/addnewuser');
     Route::get('/users', [UserController::class, 'getUser']);
     Route::view('/about',  'About/about');

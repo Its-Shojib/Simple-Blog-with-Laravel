@@ -38,11 +38,11 @@ class UserController extends Controller
         //Model Queries
         // $users = \App\Models\User::where('name', 'LIKE', '%John%')->get();
         // $users = \App\Models\User::where('name', 'LIKE', '%shojib%')->orWhere('age', '>', 26)->get();
-        
+
         // $users = \App\Models\User::where('name', 'LIKE', '%John%')->orWhere('age', '>', 25)->get();
         // $users = \App\Models\User::where('name', 'LIKE', '%John%')->orWhere('age', '>', 25)->get();
         // $users = \App\Models\User::all();
-        
+
         $users = \App\Models\User::paginate(8);
         return view('Users.users', ['users' => $users]);
     }
@@ -101,7 +101,7 @@ class UserController extends Controller
             // Login successful
             $request->session()->put('user_id', $user->id);
             return redirect('/')->with('success', 'Login successful!');
-        }else{
+        } else {
             return redirect()->back()->with('error', 'Invalid email or password');
         }
     }
@@ -151,14 +151,21 @@ class UserController extends Controller
         return view('Users.users', ['users' => $users, 'search' => $search]);
     }
 
-    function viewUser($id){
+    function viewUser($id)
+    {
         $user = \App\Models\User::find($id);
         return view('Profile.profile', ['user' => $user]);
     }
 
-    function myProfile(){
+    function myProfile()
+    {
         $user_id = session('user_id');
         $user = \App\Models\User::find($user_id);
         return view('My-Profile.my-profile', ['user' => $user]);
+    }
+    function home()
+    {
+        $users = \App\Models\User::all();
+        return view('Home.home', ['users' => $users]);
     }
 }

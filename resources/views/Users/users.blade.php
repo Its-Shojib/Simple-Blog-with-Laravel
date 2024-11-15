@@ -69,7 +69,7 @@
             </div>
         </div>
 
-        <div class="max-w-6xl mx-auto mt-10 flex justify-center">
+        <div class="max-w-6xl mx-auto my-10 flex justify-center">
             {{ $users->links() }}
         </div>
         <x-footer />
