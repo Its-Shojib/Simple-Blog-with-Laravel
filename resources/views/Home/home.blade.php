@@ -11,10 +11,6 @@
             {{ session('success') }}
         </div>
         @endif
-        <!-- <main class="flex justify-center items-center">
-            <h1 class="text-center font-bold text-2xl">Hello! I am Home.</h1>
-            
-        </main> -->
         <x-carousal />
         <x-title :sub="'Need User?'" :title="'Premium User'" />
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-10 mb-10">
