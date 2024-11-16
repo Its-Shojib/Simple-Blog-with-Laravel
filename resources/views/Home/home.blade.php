@@ -12,7 +12,7 @@
         </div>
         @endif
         <x-carousal />
-        <x-title :sub="'Need User?'" :title="'Premium User'" />
+        <x-title :sub="'Meet our'" :title="'Premium User'" />
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-10 mb-10">
             @foreach($users as $user)
             <x-user-card :user=$user />

@@ -43,7 +43,7 @@ class UserController extends Controller
         // $users = \App\Models\User::where('name', 'LIKE', '%John%')->orWhere('age', '>', 25)->get();
         // $users = \App\Models\User::all();
 
-        $users = \App\Models\User::paginate(8);
+        $users = \App\Models\User::orderBy('id', 'asc')->paginate(8);
         return view('Users.users', ['users' => $users]);
     }
 
@@ -147,7 +147,9 @@ class UserController extends Controller
     function searchUser(Request $request)
     {
         $search = $request->input('search');
-        $users = \App\Models\User::where('name', 'LIKE', '%' . $search . '%')->paginate(8);
+        $users = \App\Models\User::where('name', 'LIKE', '%' . $search . '%')
+        ->orderBy('id', 'desc')
+        ->paginate(8);
         return view('Users.users', ['users' => $users, 'search' => $search]);
     }
 
