@@ -26,6 +26,7 @@
             
         </main> -->
         <x-carousal />
+        <x-title :sub="'Need User?'" :title="'Premium User'" />
         <x-footer />
     </div>
 
