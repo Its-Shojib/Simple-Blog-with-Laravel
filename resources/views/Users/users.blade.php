@@ -20,6 +20,7 @@
             </h1> -->
         <!-- @include('components.navbar', ['page'=> 'Users']) -->
         <x-navbar :page="'Users'" />
+        <x-title :sub="'details'" title="Total Users" />
 
         <!--Search function -->
         <div class="max-w-6xl mx-auto mt-8 justify-center items-center flex gap-0">

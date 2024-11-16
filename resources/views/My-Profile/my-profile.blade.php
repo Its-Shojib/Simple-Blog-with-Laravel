@@ -15,9 +15,10 @@
     <div class="w-full mx-auto bg-gray-100 min-h-screen">
         <!-- Navbar -->
         <x-navbar :page="'Profile'" />
+        <x-title :sub="'about me?'" title="My Profile" />
 
         <!-- Profile Section -->
-        <div class="flex justify-center items-center pt-16 pb-12 px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-center items-center pb-12 px-4 sm:px-6 lg:px-8">
             <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-8">
                 <div>
                     <img width="500" height="500" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" alt="User Avatar" >

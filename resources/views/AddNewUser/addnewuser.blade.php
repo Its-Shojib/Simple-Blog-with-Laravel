@@ -14,10 +14,14 @@
     <div class="w-full mx-auto bg-gray-100 min-h-screen">
         <!-- @include('components.navbar', ['page'=> 'Home']) -->
         <x-navbar :page="'Add-New-User'" />
-        <main class="flex justify-center items-center my-10">
-            <div class="hero">
-                <div class="hero-content flex-col lg:flex-row-reverse">
-                    <div class="card bg-gray-400 w-full max-w-lg shrink-0 shadow-2xl">
+        <x-title :sub="'need more?'" title="Add New User" />
+        <div class="flex justify-center items-center w-10/12 mx-auto my-10">
+            <div class="flex-1">
+                <img src="{{ asset('build/assets/new-user.png') }}" alt="">
+            </div>
+            <div class="flex-1">
+                <div class=" flex-col lg:flex-row-reverse">
+                    <div class="card bg-gray-400 w-full max-w-xs shrink-0 shadow-2xl">
                         <h1 class="text-3xl text-center font-bold pt-5">Add New User</h1>
                         <form class="card-body" action="adduser" method="post">
                             @csrf
@@ -60,7 +64,8 @@
                     </div>
                 </div>
             </div>
-        </main>
+
+        </div>
         <x-footer />
     </div>
 
