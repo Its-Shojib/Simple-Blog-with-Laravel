@@ -7,7 +7,7 @@
         <!-- @include('components.navbar', ['page'=> 'Home']) -->
         <x-navbar :page="'Add-New-User'" />
         <x-title :sub="'need more?'" title="Add New User" />
-        <div class="flex justify-center items-center w-10/12 mx-auto my-10">
+        <div class="flex flex-col md:flex-row justify-center items-center w-10/12 mx-auto my-10">
             <div class="flex-1">
                 <img src="{{ asset('build/assets/new-user.png') }}" alt="">
             </div>
